@@ -2,20 +2,20 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Tweet {
-    private String name;
+    private String username;
     private String text;
     private Date creationDate;
 
-    public Tweet() {}
+    public Tweet() { }
 
-    public Tweet(String name, String text, Date creation) {
-        this.name = name;
+    public Tweet(String username, String text, Date creationDate) {
+        this.username = username;
         this.text = text;
-        this.creationDate = creation;
+        this.creationDate = creationDate;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String username) {
+        this.username = username;
     }
 
     public void setText(String text) {
@@ -26,8 +26,8 @@ public class Tweet {
         this.creationDate = creationDate;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return username;
     }
 
     public String getText() {
@@ -43,21 +43,22 @@ public class Tweet {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Tweet that = (Tweet) o;
-        return Objects.equals(name, that.name) &&
+        return Objects.equals(username, that.username) &&
                 Objects.equals(text, that.text) &&
                 Objects.equals(creationDate, that.creationDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, text, creationDate);
+        return Objects.hash(username, text, creationDate);
     }
 
     @Override
     public String toString() {
         return "Tweet: " +
                 "\nData criação: " + creationDate +
-                "\nNome do usuario:' " + name +
+                "\nNome do usuario: " + username +
                 "\nMensagem: \n" + text + "\n";
     }
+
 }
